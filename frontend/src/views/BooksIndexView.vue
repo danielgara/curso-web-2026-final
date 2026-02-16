@@ -17,30 +17,19 @@ const books = BookService.getBooks();
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="book in books" :key="book.id">
-          <div
-            class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border border-gray-200"
-          >
+          <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border border-gray-200">
             <div class="flex justify-between items-center mb-2">
               <h3 class="text-xl font-semibold text-gray-800">
                 {{ book.title }}
               </h3>
-              <span
-                v-if="book.stock > 0"
-                class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full ml-2"
-              >
+              <span v-if="book.stock > 0" class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full ml-2">
                 {{ book.stock }} available
               </span>
-              <span v-else class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full ml-2">
-                Not available
-              </span>
+              <span v-else class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full ml-2"> Not available </span>
             </div>
 
             <div class="flex justify-center mb-4">
-              <img
-                src="https://picsum.photos/seed/picsum/536/354"
-                alt="Book Cover"
-                class="object-cover rounded shadow-sm w-full h-auto"
-              />
+              <img src="https://picsum.photos/seed/picsum/536/354" alt="Book Cover" class="object-cover rounded shadow-sm w-full h-auto" />
             </div>
 
             <p class="text-gray-500 text-sm mb-3">

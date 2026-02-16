@@ -22,5 +22,3 @@ function increment() {
   padding: 1rem;
 }
 </style>
-
-
