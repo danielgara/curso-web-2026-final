@@ -1,26 +1,14 @@
 <script setup lang="ts">
 import { BookService } from '@/services/BookService.js';
-import OtherService from '@/services/OtherService.js';
+import PriceFormat from '@/utils/PriceFormat.js';
 import { ref, watch } from 'vue';
 
 const books = BookService.getBooks();
 const filteredBooks = ref(books);
 
 // selectors
-const selectorCategories = OtherService.getUniqueBookCategories();
+const selectorCategories = BookService.getUniqueBookCategories();
 const selectedCategory = ref('');
-
-// functions
-function formatToCOP(price: number): string {
-  const formatter = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-
-  return formatter.format(price).replace(/^\s*\$\s?/, '');
-}
 
 // watchers
 watch(selectedCategory, (newCategory) => {
@@ -77,7 +65,7 @@ watch(selectedCategory, (newCategory) => {
             <div class="bg-gray-50 rounded-lg p-3 mb-4">
               <div class="flex justify-between text-sm">
                 <span class="text-gray-600">Price:</span>
-                <span class="font-semibold">${{ formatToCOP(book.price) }} COP</span>
+                <span class="font-semibold">${{ PriceFormat.formatToCOP(book.price) }} COP</span>
               </div>
             </div>
 

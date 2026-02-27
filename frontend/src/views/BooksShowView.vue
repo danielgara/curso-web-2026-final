@@ -1,23 +1,12 @@
 <script setup lang="ts">
 import BookReviews from '@/components/BookReviews.vue';
 import { BookService } from '@/services/BookService.js';
+import PriceFormat from '@/utils/PriceFormat.js';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const bookId = Number(route.params.id);
 const book = BookService.getBookById(bookId);
-
-// functions
-function formatToCOP(price: number): string {
-  const formatter = new Intl.NumberFormat('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-
-  return formatter.format(price).replace(/^\s*\$\s?/, '');
-}
 </script>
 
 <template>
@@ -60,7 +49,7 @@ function formatToCOP(price: number): string {
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Price:</span>
-                  <span class="font-medium">${{ formatToCOP(book.price) }} COP</span>
+                  <span class="font-medium">${{ PriceFormat.formatToCOP(book.price) }} COP</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-600">Stock:</span>
