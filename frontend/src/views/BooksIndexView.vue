@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { BookService } from '@/services/BookService.js';
-import PriceFormat from '@/utils/PriceFormat.js';
+// external imports
 import { ref, watch } from 'vue';
 
+// internal imports
+import BookService from '@/services/BookService.js';
+import PriceFormat from '@/utils/PriceFormat.js';
+
+// variables
 const books = BookService.getBooks();
+
+// reactive variables
 const filteredBooks = ref(books);
 
 // selectors

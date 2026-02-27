@@ -2,7 +2,7 @@ import type { BookInterface } from '@/interfaces/BookInterface';
 import { useBookStore } from '@/stores/bookstore.js';
 import type { CreateBookDTO } from '@/dtos/CreateBookDTO.js';
 
-export class BookService {
+export default class BookService {
   public static getBooks(): BookInterface[] {
     return useBookStore().books;
   }

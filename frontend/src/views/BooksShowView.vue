@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BookReviews from '@/components/BookReviews.vue';
-import { BookService } from '@/services/BookService.js';
+import BookService from '@/services/BookService.js';
 import PriceFormat from '@/utils/PriceFormat.js';
 import { useRoute } from 'vue-router';
 
