@@ -2,6 +2,7 @@ FROM nginx:alpine
 
 # Copy pre-built dist folder
 COPY dist/ /usr/share/nginx/html/
+COPY .env ./
 
 # Copy nginx config for SPA routing
 COPY nginx.conf /etc/nginx/conf.d/default.conf
