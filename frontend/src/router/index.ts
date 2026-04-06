@@ -9,7 +9,6 @@ import VariablesView1 from '@/views/VariablesView1.vue';
 import VariablesView2 from '@/views/VariablesView2.vue';
 import VariablesView3 from '@/views/VariablesView3.vue';
 import VariablesView4 from '@/views/VariablesView4.vue';
-import VariablesView5 from '@/views/VariablesView5.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,7 +23,6 @@ const router = createRouter({
     { path: '/variables2', name: 'variables2', component: VariablesView2, meta: { title: 'Variables2' } },
     { path: '/variables3', name: 'variables3', component: VariablesView3, meta: { title: 'Variables3' } },
     { path: '/variables4', name: 'variables4', component: VariablesView4, meta: { title: 'Variables4' } },
-    { path: '/variables5', name: 'variables5', component: VariablesView5, meta: { title: 'Variables5' } },
   ],
 });
 
