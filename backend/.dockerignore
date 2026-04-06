@@ -4,6 +4,5 @@ coverage
 .gitignore
 *.md
 test
-database.sqlite
 .env
 .env.*
